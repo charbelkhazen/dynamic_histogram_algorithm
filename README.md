@@ -46,6 +46,13 @@ In a naive histogram algorithm, for each forecasting horizon, you create a histo
 In my dynamic histogram algorithm, instead of adding one each time, you add a value proportional to the time distance from the forecasting horizon (which I call the vicinity metric). For example, if those 100 '0 sales' are from 10 years ago,their contribution will be minimal, approaching zero, reflecting their decreased relevance compared to more recent sales. Conversely, if 50 '1 sale' occurred in the last 50 days, each '1 sale''s contribution will be higher, close to 1 , making the bin for '1 sale' potentially higher than the bin for '0 sales', even if the number of '1' sales is fewer.
 
 
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Examples](#examples)
+- [Contact](#contact)
+ 
 ## Installation
 
 To use this algorithm, clone the repository and install the necessary dependencies:
@@ -54,3 +61,9 @@ To use this algorithm, clone the repository and install the necessary dependenci
 git clone https://github.com/charbelkhazen/dynamic_histogram_algorithm.git
 cd dynamic_histogram_algorithm
 pip install -r requirements.txt
+```
+## Contact
+
+Email: khazencharbel@gmail.com
+
+LinkedIn: [charbelkhazen](https://www.linkedin.com/in/charbel-khazen-017285203/)
