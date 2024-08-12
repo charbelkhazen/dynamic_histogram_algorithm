@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository implements a dynamic histogram algorithm tailored for time series forecasting. I reproduce the method presented by [Mamonov et al.](https://www.sciencedirect.com/science/article/abs/pii/S0169207022000541), whose formulae and direct methods are not publicly disclosed.
+I implement a dynamic histogram algorithm tailored for time series forecasting. I reproduce the method presented by [Mamonov et al.](https://www.sciencedirect.com/science/article/abs/pii/S0169207022000541), whose formulae and direct methods are not publicly disclosed.
 
 ## Methodology
 
