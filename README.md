@@ -33,7 +33,9 @@ The strength of this method lies in its vicinity function, which considers:
 - Minute vicinity
 - Second vicinity
 - Week vicinity
+- 
 (These are all cyclical)
+
 and a non-cyclical measure (weights points based on distance from the horizon without considering cycles)
 
 ### Intuitive Example
