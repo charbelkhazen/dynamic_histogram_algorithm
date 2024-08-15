@@ -33,8 +33,8 @@ The strength of this method lies in its vicinity function, which considers:
 - Minute vicinity
 - Second vicinity
 - Week vicinity
-- 
-(These are all cyclical)
+
+(These are all cyclical measures)
 
 and a non-cyclical measure (weights points based on distance from the horizon without considering cycles)
 
@@ -50,7 +50,6 @@ In my dynamic histogram algorithm, instead of adding one each time, you add a va
 
 ## Table of Contents
 - [Installation](#installation)
-- [Features](#features)
 - [Usage](#usage)
 - [Example](#examples)
 - [Contact](#contact)
@@ -63,95 +62,7 @@ To use this algorithm, clone the repository and install the necessary dependenci
 git clone https://github.com/charbelkhazen/dynamic_histogram_algorithm.git
 cd dynamic_histogram_algorithm
 pip install -r requirements.txt
-```
-# Features
-
-Vicinity Functions:
-
-The following functions compute a "vicinity" or similarity measure between two time-related inputs, based on predefined equally spaced intervals:
-
-- **`minute_of_hour_vicinity(x, y)`**: 
-  - **Input**: Two integers representing minutes within an hour.
-  - **Output**: A value representing the vicinity between the two minute values.
-
-- **`hour_of_day_vicinity(x, y)`**: 
-  - **Input**: Two integers representing hours within a day.
-  - **Output**: A value representing the vicinity between the two hour values.
-
-- **`day_of_week_vicinity(x, y)`**: 
-  - **Input**: Two integers representing days within a week.
-  - **Output**: A value representing the vicinity between the two day values.
-
-- **`week_of_month_vicinity(x, y)`**: 
-  - **Input**: Two integers representing weeks within a month.
-  - **Output**: A value representing the vicinity between the two week values.
-
-- **`month_of_year_vicinity(x, y)`**: 
-  - **Input**: Two integers representing months within a year.
-  - **Output**: A value representing the vicinity between the two month values.
-
-- **`day_of_month_vicinity(x, y, nbr_of_days_in_month)`**: 
-  - **Input**: Two integers representing days within a month, and the number of days in the month.
-  - **Output**: A value representing the vicinity between the two day values, adjusted for the length of the month.
-
-HistAlg Class
-
-The `HistAlg` class processes time series data using the vicinity functions to perform various operations.
-
-- **`__init__`**:
-  - **Input**: 
-    - `data`: A Pandas DataFrame containing the dataset.
-    - `var_column_name`: The name of the variable column (default: `'quantity'`).
-    - `date_granularity`: The granularity of the date comparison (e.g., 'days', 'hours').
-    - `date_column_name`: The name of the date column (default: `'date'`).
-    - Various vicinity weights (e.g., `weight_month_of_year_vic`, `weight_day_of_week_vic`).
-    - `bins`: Number of bins for histogram creation (optional).
-    - `turn_off_vicinity`: Boolean to disable vicinity calculations (default: `False`).
-  - **Output**: Initializes the `HistAlg` object with the provided data and parameters.
-
-- **`set_params(**params)`**:
-  - **Input**: Arbitrary keyword parameters corresponding to class attributes.
-  - **Output**: Updates class attributes based on the provided parameters.
-
-- **`list_horizons(prct=0.6)`**:
-  - **Input**: A float representing the percentage of values before the horizon.
-  - **Output**: Returns a list of horizon dates starting from a specific index in the DataFrame.
-
-- **`non_stationary_vicinity(x, y)`**:
-  - **Input**: Two timestamps.
-  - **Output**: Vicinity value based on the date granularity, comparing two dates.
-
-- **`find_vicinity(horizon='yyyy-mm-dd')`**:
-  - **Input**: A horizon date.
-  - **Output**: A DataFrame with computed vicinity values based on the selected weights.
-
-- **`create_histogram(bins=None)`**:
-  - **Input**: Optional number of bins for the histogram.
-  - **Output**: Creates and returns a histogram with vicinity percentages.
-
-- **`sample_from_histogram(nbr_of_samples=100)`**:
-  - **Input**: Integer representing the number of samples (default: 100).
-  - **Output**: The average of the sampled values from the histogram.
-
-- **`compute_absolute_deviation()`**:
-  - **Input**: None.
-  - **Output**: The absolute deviation between the actual and forecasted values.
-
-- **`reset_to_original_df()`**:
-  - **Input**: None.
-  - **Output**: Resets the DataFrame to its original state.
-
-- **`get_df()`**:
-  - **Input**: None.
-  - **Output**: Returns the current DataFrame.
-
-- **`get_histogram()`**:
-  - **Input**: None.
-  - **Output**: Returns the generated histogram.
-
-- **`get_sample()`**:
-  - **Input**: None.
-  - **Output**: Returns the sampled value from the histogram.
+``` 
 ## Usage
 
 The dynamic histogram has the following tunable hyperparameters:
